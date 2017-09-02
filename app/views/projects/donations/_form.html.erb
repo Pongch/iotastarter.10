@@ -3,12 +3,12 @@
   <div class="col-sm-6">
   <div class="form-group">
     <label for="name">Your Name</label>
-    <%= form.text_field :name, value:"Enter your name" , class:"form-control input-sm" %>
+    <%= form.text_field :name, class:"form-control input-sm" %>
   </div>
   <div class="form-group">
     <label for="amount">Amount you would like to Donate</label>
     <%= form.number_field :amount, class:"form-control" %>
-    <p>(In million Iota)</p>
+    (In <strong>million</strong> Iota)
   </div>
   <div class="form-group">
     <label for="url">Your Website</label>
@@ -19,7 +19,7 @@
     <%= form.text_field :email, class:"form-control" %>
   </div>
   <div class="form-group">
-    <label for="tag">Your Verification Code: <span style="color:red;">*</span></label>
+    <label for="tag" class="copy-this">Your Verification Code: <span style="color:red;">*</span></label>
     <%= form.text_field :tag, value:"#{opttag(10)}", class:"form-control" %>
   </div>
     <div class="alert alert-info">

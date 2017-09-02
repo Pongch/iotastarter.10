@@ -3,7 +3,6 @@
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
       <ul>
       <% project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,57 +10,44 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <p>Your Name</p>
-    <%= form.text_field :owner, id: :project_owner %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="owner">Your Name</label>
+        <%= form.text_field :owner, class:"form-control" %>
+      </div>
+      <div class="col-sm-4">
+        <label for="email">Your Email</label>
+        <%= form.text_field :email, class:"form-control"%>
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Your Email</p>
-    <%= form.text_field :email, id: :project_email %>
+  <div class="form-group">
+    <label for="url">Your Website</label>
+    <%= form.text_field :url, class:"form-control"%>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Your Website</p>
-    <%= form.text_field :url, id: :project_url %>
+  <div class="form-group">
+    <label for="url">Project Title</label>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Project Title</p>
-    <%= form.text_field :title, id: :project_title %>
+  <div class="form-group">
+    <label for="description">Project Description</label>
+    <%= form.text_area :description, class:"form-control" %>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Project Description</p>
-    <%= form.text_area :description, id: :project_description %>
+  <div class="form-group">
+    <label for=category"">Project Category</label>
+    <%= form.select :category, ['Technology','Art', 'Design', 'Fashion', 'Film & Video', 'Food', 'Music', 'Photography','Publishiing']%>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Project Category</p>
-    <%= form.text_field :category, id: :project_category %>
+  <div class="form-group">
+    <label for="total">Fundraising Goal</label>
+    <%= form.number_field :total, class:"form-control" %>
+    <em>(Total Amount you are raising in <strong>Million</strong> Iota)</em>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Fundraising Goal</p>
-    <p>Total Amount you are raising in Million Iota</p>
-    <%= form.number_field :total, id: :project_total %>
+  <div class="form-group">
+    <label for="address">Your IOTA Wallet Address</label>
+    <%= form.text_field :address, class:"form-control" %>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Your IOTA Wallet Address</p>
-    <%= form.text_field :address, id: :project_address %>
-  </div>
-  <br>
-  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Post Project", class:"btn btn-default"  %>
   </div>
 <% end %>
