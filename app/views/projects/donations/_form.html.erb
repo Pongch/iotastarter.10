@@ -1,43 +1,34 @@
 <%= form_for [@project, @donation] do |form| %>
 
-  <div class="field">
-    <p>Your Name</p>
-    <%= form.text_field :name, id: :donation_name %>
+  <div class="col-sm-6">
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <%= form.text_field :name, value:"Enter your name" , class:"form-control input-sm" %>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Amount you would like to Donate</p>
-    <%= form.number_field :amount, id: :donation_amount %>
+  <div class="form-group">
+    <label for="amount">Amount you would like to Donate</label>
+    <%= form.number_field :amount, class:"form-control" %>
     <p>(In million Iota)</p>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Your Website</p>
-    <%= form.text_field :url, id: :donation_url %>
+  <div class="form-group">
+    <label for="url">Your Website</label>
+    <%= form.text_field :url, class:"form-control" %>
   </div>
-  <br>
-  <br>
-  <div class="field">
-    <p>Your Email</p>
-    <%= form.text_field :email, id: :email_url %>
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <%= form.text_field :email, class:"form-control" %>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="field">
-    <p><strong> Your Verification Code:</strong></p>
-    <%= form.text_field :tag, value:"#{opttag(10)}" %>
-    <br>
-    <br>
+  <div class="form-group">
+    <label for="tag">Your Verification Code: <span style="color:red;">*</span></label>
+    <%= form.text_field :tag, value:"#{opttag(10)}", class:"form-control" %>
+  </div>
     <div class="alert alert-info">
       <p>Please Copy and paste above value into your Optional tag before sending donation (that way we can verify your payment) </p>
     </div>
+
+    <div class="actions">
+      <%= form.submit 'Make Donations', class:"btn btn-default"  %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit  %>
-  </div>
 <% end %>
