@@ -29,15 +29,20 @@
   <%= @project.url %>
 </p>
 
-<p>
-  <strong>Total Raising </strong>
-  <h3><%= @project.total %><span> Million Iota</span></h3>
-</p>
+
+  <p class="text-center"><strong>Funding: </strong></p>
+  <h3 class="text-center"><%= @project.total %><span> Million Iota</span></h3>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      40% Towards Funding Goal
+    </div>
+  </div>
 <br>
-<%= link_to 'I WANT TO BACK THIS PROJECT', new_project_donation_path(@project), class:"btn btn-danger"%>
+<%= link_to 'BACK THIS PROJECT', new_project_donation_path(@project), class:"btn btn-primary btn-lg"%>
 <br>
 <br>
-<h2 class="text-center">See Backers for this Project !</h2>
+<h2 class="text-center">Backers Leaderboard</h2>
 
 <table>
   <tr>
@@ -49,7 +54,7 @@
   <tr>
     <td><%= donation.name %></td>
     <td><%= donation.amount %></td>
-    <td><%= donation.url %></td>
+    <td><a href="http://"><%= donation.url %></a></td>
   <!--<p>Your Secret Tag</p>
   <%= donation.tag %>-->
 <% end %>
