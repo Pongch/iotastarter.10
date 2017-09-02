@@ -1,26 +1,30 @@
 <%= form_for [@project, @donation] do |form| %>
 
   <div class="field">
-    <%= form.label :name %>
+    <p>Your Name</p>
     <%= form.text_field :name, id: :donation_name %>
   </div>
-
+  <br>
+  <br>
   <div class="field">
-    <%= form.label :amount %>
+    <p>Amount you would like to Donate</p>
     <%= form.number_field :amount, id: :donation_amount %>
     <p>(In million Iota)</p>
   </div>
-
+  <br>
+  <br>
   <div class="field">
-    <%= form.label :url %>
+    <p>Your Website</p>
     <%= form.text_field :url, id: :donation_url %>
   </div>
-
+  <br>
+  <br>
   <div class="field">
-    <%= form.label :email %>
+    <p>Your Email</p>
     <%= form.text_field :email, id: :email_url %>
   </div>
-
+  <br>
+  <br>
   <br>
   <br>
   <div class="field">
