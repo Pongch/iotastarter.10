@@ -15,10 +15,57 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+strong {
+  color:#6F4FC4;
+}
+
+h1,h2,h3 {
+  font-family: 'Aldrich', sans-serif;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.10);
+}
+
+.jumbotron {
+    background-image: url("https://unsplash.it/1000/600?image=1067/?blur");
+    margin-bottom: 0;
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: #06d8b9;
+
+}
+
+.panel-default {
+    /*border-color: #6F4FC4;*/
+    border-left: solid;
+    border-left-width: 3px;
+}
+
  .navbar-default .navbar-brand {
-     color: #777;
+     color: black!important;
+     font-size: 20px;
      margin-top: 1em!important;
+     font-family: 'Aldrich', sans-serif;
  }
+
+
 
 .myLogo {
   width: 6%;
