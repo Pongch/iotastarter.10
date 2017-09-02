@@ -8,12 +8,19 @@
   <div class="field">
     <%= form.label :amount %>
     <%= form.number_field :amount, id: :donation_amount %>
+    <p>(In million Iota)</p>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :donation_url %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :donation_email %>
+    <%= form.text_field :email, id: :email_url %>
   </div>
+
   <br>
   <br>
   <div class="field">
@@ -22,11 +29,11 @@
     <br>
     <br>
     <div class="alert alert-info">
-      <p>Please Copy and paste this value into your Optional tag before sending donation (that way we can verify yuour payment) </p>
+      <p>Please Copy and paste above value into your Optional tag before sending donation (that way we can verify your payment) </p>
     </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  %>
   </div>
 <% end %>

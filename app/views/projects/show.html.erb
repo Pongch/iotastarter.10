@@ -20,7 +20,17 @@
 </p>
 
 <p>
-  <strong>Total Rasing (in Million Iota):</strong>
+  <strong>IOTA Address:</strong>
+  <%= @project.address %>
+</p>
+
+<p>
+  <strong>Website</strong>
+  <%= @project.url %>
+</p>
+
+<p>
+  <strong>Total Raising (in Million Iota):</strong>
   <h3><%= @project.total %></h3>
 </p>
 <br>
@@ -29,23 +39,23 @@
 <br>
 <h2 class="text-center">See Backers for this Project !</h2>
 
-<% @donations.each do |donation| %>
 <table>
   <tr>
     <td><strong>Name</strong></td>
     <td><strong>Amount</strong></td>
-    <td><strong>Email</strong></td>
+    <td><strong>Website</strong></td>
   </tr>
+  <% @donations.each do |donation| %>
   <tr>
     <td><%= donation.name %></td>
     <td><%= donation.amount %></td>
-    <td><%= donation.email %></td>
+    <td><%= donation.url %></td>
   <!--<p>Your Secret Tag</p>
   <%= donation.tag %>-->
 <% end %>
 </table>
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<!--<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 <%= link_to 'Destroy', project_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+-->
 </div>

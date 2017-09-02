@@ -28,7 +28,23 @@
   </div>
 
   <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :project_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :YourWebsite %>
+    <%= form.text_field :url, id: :project_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :project_email %>
+  </div>
+
+  <div class="field">
     <%= form.label :total %>
+    <p>in Million Iota</p>
     <%= form.number_field :total, id: :project_total %>
   </div>
 
