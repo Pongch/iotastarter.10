@@ -14,10 +14,16 @@
     <%= form.label :email %>
     <%= form.text_field :email, id: :donation_email %>
   </div>
-
+  <br>
+  <br>
   <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag, id: :donation_tag %>
+    <p><strong> Your Verification Code:</strong></p>
+    <%= form.text_field :tag, value:"#{opttag(10)}" %>
+    <br>
+    <br>
+    <div class="alert alert-info">
+      <p>Please Copy and paste this value into your Optional tag before sending donation (that way we can verify yuour payment) </p>
+    </div>
   </div>
 
   <div class="actions">

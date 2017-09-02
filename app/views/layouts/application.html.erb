@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Iotastarter10</title>
+    <title>IotaStarter</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Crowdfunding Campaign, powered by Iota !">
+    <meta name="keywords" content="Iota, Crowdfunding">
+    <title>IotaStarter| Crowdfunding Campaign with Iota </title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <%= link_to"IotaStarter", root_path , class:"navbar-brand" %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to"Start your Project Today", new_project_path  %>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

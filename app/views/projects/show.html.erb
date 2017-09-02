@@ -1,8 +1,12 @@
-<p id="notice"><%= notice %></p>
+
+<div class="container body">
 
 <p>
-  <strong>Title:</strong>
-  <%= @project.title %>
+  <h1><%= @project.title %></h1>
+</p>
+<p>
+  <strong>Category:</strong>
+  <span class="badge"><%= @project.category %></span>
 </p>
 
 <p>
@@ -11,33 +15,37 @@
 </p>
 
 <p>
-  <strong>Owner:</strong>
+  <strong>Made by:</strong>
   <%= @project.owner %>
 </p>
 
 <p>
-  <strong>Total:</strong>
-  <%= @project.total %>
+  <strong>Total Rasing (in Million Iota):</strong>
+  <h3><%= @project.total %></h3>
 </p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
+<br>
+<%= link_to 'I WANT TO BACK THIS PROJECT', new_project_donation_path(@project), class:"btn btn-danger"%>
+<br>
+<br>
+<h2 class="text-center">See Backers for this Project !</h2>
 
 <% @donations.each do |donation| %>
-  <p>Name</p>
-  <%= donation.name %>
-  <p>Amount</p>
-  <%= donation.amount %>
-  <p>Email</p>
-  <%= donation.email %>
-  <p>Your Secret Tag</p>
-  <%= donation.tag %>
+<table>
+  <tr>
+    <td><strong>Name</strong></td>
+    <td><strong>Amount</strong></td>
+    <td><strong>Email</strong></td>
+  </tr>
+  <tr>
+    <td><%= donation.name %></td>
+    <td><%= donation.amount %></td>
+    <td><%= donation.email %></td>
+  <!--<p>Your Secret Tag</p>
+  <%= donation.tag %>-->
 <% end %>
-
-
-
+</table>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
-<%= link_to 'Make Donation', new_project_donation_path(@project)%>
+<%= link_to 'Destroy', project_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</div>

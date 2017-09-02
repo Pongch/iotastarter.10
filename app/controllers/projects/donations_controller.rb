@@ -4,7 +4,7 @@ class Projects::DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all
+    @donations = Donation.all.order("amount DESC")
   end
 
   # GET /donations/1
