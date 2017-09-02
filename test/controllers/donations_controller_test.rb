@@ -17,7 +17,7 @@ class DonationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create donation" do
     assert_difference('Donation.count') do
-      post donations_url, params: { donation: { amount: @donation.amount, email: @donation.email, name: @donation.name, tag: @donation.tag } }
+      post donations_url, params: { donation: { amount: @donation.amount, email: @donation.email, name: @donation.name, project_id: @donation.project_id, tag: @donation.tag } }
     end
 
     assert_redirected_to donation_url(Donation.last)
@@ -34,7 +34,7 @@ class DonationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update donation" do
-    patch donation_url(@donation), params: { donation: { amount: @donation.amount, email: @donation.email, name: @donation.name, tag: @donation.tag } }
+    patch donation_url(@donation), params: { donation: { amount: @donation.amount, email: @donation.email, name: @donation.name, project_id: @donation.project_id, tag: @donation.tag } }
     assert_redirected_to donation_url(@donation)
   end
 

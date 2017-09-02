@@ -23,12 +23,17 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :donation_email %> (value in IOTA unit)
+    <%= form.text_field :email, id: :donation_email %>
   </div>
 
   <div class="field">
     <%= form.label :tag %>
-    <%= form.text_field :tag, value: "#{opttag(10)}" %>
+    <%= form.text_field :tag, id: :donation_tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id, id: :donation_project_id %>
   </div>
 
   <div class="actions">

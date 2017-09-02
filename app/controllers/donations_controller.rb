@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all.order("amount DESC")
+    @donations = Donation.all
   end
 
   # GET /donations/1
@@ -28,7 +28,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created! Please enter your secret tag so we can verify your payment' }
+        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
         format.json { render :show, status: :created, location: @donation }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class DonationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
-      params.require(:donation).permit(:name, :amount, :email, :tag)
+      params.require(:donation).permit(:name, :amount, :email, :tag, :project_id)
     end
 end

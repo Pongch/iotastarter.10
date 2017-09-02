@@ -5,9 +5,11 @@ one:
   amount: 1
   email: MyString
   tag: MyString
+  project: one
 
 two:
   name: MyString
   amount: 1
   email: MyString
   tag: MyString
+  project: two
