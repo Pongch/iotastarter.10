@@ -1,5 +1,5 @@
-class DonationsController < ApplicationController
-  before_action :set_donation, only: [:show, :edit, :update, :destroy]
+class Projects::DonationsController < ApplicationController
+  #before_action :set_donation, only: [:show, :edit, :update, :destroy]
 
   # GET /donations
   # GET /donations.json
@@ -14,6 +14,7 @@ class DonationsController < ApplicationController
 
   # GET /donations/new
   def new
+    @project = Project.find(params[:project_id])
     @donation = Donation.new
   end
 
@@ -24,15 +25,17 @@ class DonationsController < ApplicationController
   # POST /donations
   # POST /donations.json
   def create
+    @project = Project.find(params[:project_id])
     @donation = Donation.new(donation_params)
+    @donation.project = @project
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
-        format.json { render :show, status: :created, location: @donation }
+        format.html { redirect_to @project, notice: 'Donation was successfully created.' }
+        format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
-        format.json { render json: @donation.errors, status: :unprocessable_entity }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end

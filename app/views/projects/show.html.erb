@@ -25,5 +25,19 @@
   <%= @project.category %>
 </p>
 
+<% @donations.each do |donation| %>
+  <p>Name</p>
+  <%= donation.name %>
+  <p>Amount</p>
+  <%= donation.amount %>
+  <p>Email</p>
+  <%= donation.email %>
+  <p>Your Secret Tag</p>
+  <%= donation.tag %>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+<%= link_to 'Make Donation', new_project_donation_path(@project)%>
