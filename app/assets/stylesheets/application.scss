@@ -15,6 +15,48 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .navbar-default .navbar-brand {
+     color: #777;
+     margin-top: 1em!important;
+ }
+
+.myLogo {
+  width: 6%;
+  margin-top: 0.2em;
+  margin-bottom:0.2em;
+}
+
+@media only screen and (max-width: 995px) {
+  .myLogo{
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .myLogo{
+    display: none;
+  }
+}
+
+ nav.navbar.navbar-default.navbar-fixed-top {
+   background-color: white;
+   border-bottom: solid;
+   border-color: #06d8b9;
+   border-bottom-width: 0.3em;
+   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.09);
+ }
+
+a.nav-button:hover,
+a.nav-button {
+  float: right ;
+  border-style: solid;
+  border-radius: 2em;
+  background: linear-gradient(25deg, #06d8b9, #0087cc);
+  color:white !important;
+  margin-top:0.7em;
+  margin-bottom:0.7em;
+}
+
 div.body{
   margin-top:6em;
 }
