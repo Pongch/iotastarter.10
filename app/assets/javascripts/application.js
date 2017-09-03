@@ -16,3 +16,9 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap-sprockets
+
+$(document).ready(function () {
+    $(".pop").click(function(){
+         $('#myModal').modal('show');
+    });
+});
