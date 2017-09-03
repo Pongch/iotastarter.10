@@ -1,0 +1,33 @@
+<%= form_with(model: sitedonation, local: true) do |form| %>
+
+  <div class="col-sm-6">
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <%= form.text_field :name, class:"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount you would like to Donate</label>
+    <%= form.number_field :amount, class:"form-control" %>
+    (In <strong>million</strong> Iota)
+  </div>
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="url">Your Website</label>
+    <%= form.text_field :url, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="tag" class="copy-this">Your Verification Code: <span style="color:red;">*</span></label>
+    <%= form.text_field :tag, value:"#{opttag(10)}", class:"form-control" %>
+  </div>
+    <div class="alert alert-info">
+      <p>Please Copy and paste above value into your OPTIONAL TAG in your wallet before sending donation (that way we can verify your payment) </p>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Make Donations', class:"btn btn-default"  %>
+    </div>
+  </div>
+<% end %>

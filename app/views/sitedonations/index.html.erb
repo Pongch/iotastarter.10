@@ -1,0 +1,65 @@
+
+<div class="container body">
+<h1>IotaStarter</h1>
+<p>
+  <strong>Category:</strong>
+  <span class="badge">Campaign</span>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  Our platform helps you crowdfund your project with ZERO fees. The idea and project were born at the #IOTAhackathon in Bangkok, Thailand on the 1st September 2017. Please support by donating, because this will keep us going!
+</p>
+
+<p>
+  <strong>Made by:</strong>
+  IOTAstarter.com
+</p>
+
+<p>
+  <strong>IOTA Address:</strong>
+  <p>KGOKNOKZWYRIFOIYBGDDQ9CVGGGOLPZKZJEMJXETSZEYZLJWCUKPRECHLJAEMIENDFJAISUYGOSRLJZNDNORGZCLAY</p>
+</p>
+
+<p>
+  <strong>Website</strong>
+  <a href="http://www.techgrind.asia">www.TechGrind.asia</a>
+</p>
+
+  <%= link_to 'Donate to IotaStarter', new_sitedonation_path, class:"btn btn-danger" %>
+
+  <p class="text-center"><strong>Funding: </strong></p>
+  <h3 class="text-center">10,000<span> Million Iota</span></h3>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      40% Towards Funding Goal
+    </div>
+  </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sitedonations.each do |sitedonation| %>
+      <tr>
+        <td><%= sitedonation.name %></td>
+        <td><%= sitedonation.amount %></td>
+        <td><%= sitedonation.url %></td>
+        <!--<td><%= link_to 'Show', sitedonation %></td>
+        <td><%= link_to 'Edit', edit_sitedonation_path(sitedonation) %></td>
+        <td><%= link_to 'Destroy', sitedonation, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>

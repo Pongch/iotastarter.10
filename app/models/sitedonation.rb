@@ -1,0 +1,2 @@
+class Sitedonation < ApplicationRecord
+end
