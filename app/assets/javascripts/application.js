@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 
-$(document).ready(function () {
+$(document).on('turbolinks:load',function() {
     $(".pop").click(function(){
          $('#myModal').modal('show');
     });
