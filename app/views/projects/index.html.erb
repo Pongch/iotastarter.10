@@ -105,7 +105,9 @@
         <strong>Description </strong>
         <%= project.description %>
         <br>
-        <strong>Total Amount Raising</strong>
+        <strong>Raised</strong>
+        <%= project.donations.approved.sum(:amount) %>
+        <strong>Out of</strong>
         <%= project.total %> Mi (Million Iota)
         <br>
         <br>
