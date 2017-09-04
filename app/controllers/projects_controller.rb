@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-    @donations = @project.donations.order("amount DESC")
+    @donations = @project.donations.approved.order("amount DESC")
   end
 
   # GET /projects/new
