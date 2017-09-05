@@ -23,19 +23,22 @@
 
 <p>
   <strong>Website</strong>
-  <a href="http://www.techgrind.asia">www.TechGrind.asia</a>
+  <a href="http://www.iotastarter.com">www.iotastarter.com</a>
 </p>
 
   <%= link_to 'Donate to IotaStarter', new_sitedonation_path, class:"btn btn-danger" %>
 
   <p class="text-center"><strong>Funding: </strong></p>
-  <h3 class="text-center">10,000<span> Million Iota</span></h3>
-  <div class="progress">
-    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-      40% Towards Funding Goal
-    </div>
+  <h3 class="text-center"><%= @sitedonations.approved.sum(:amount) %> of 10,000<span> Million Iota</span></h3>
+
+  <% siteproject_completion = (@sitedonations.approved.sum(:amount) / 10000.0) * 100 %>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="<%= siteproject_completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= siteproject_completion %>%;">
+    <%= siteproject_completion %>%
   </div>
+</div>
 
 <table>
   <thead>

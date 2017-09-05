@@ -4,7 +4,7 @@ class SitedonationsController < ApplicationController
   # GET /sitedonations
   # GET /sitedonations.json
   def index
-    @sitedonations = Sitedonation.all
+    @sitedonations = Sitedonation.approved.order("amount DESC")
   end
 
   # GET /sitedonations/1
