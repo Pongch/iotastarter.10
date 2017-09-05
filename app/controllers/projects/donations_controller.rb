@@ -14,7 +14,7 @@ class Projects::DonationsController < ApplicationController
 
   # GET /donations/new
   def new
-    @project = Project.find(params[:project_id])
+    @project = Project.friendly.find(params[:project_id])
     @donation = Donation.new
   end
 
@@ -25,7 +25,7 @@ class Projects::DonationsController < ApplicationController
   # POST /donations
   # POST /donations.json
   def create
-    @project = Project.find(params[:project_id])
+    @project = Project.friendly.find(params[:project_id])
     @donation = Donation.new(donation_params)
     @donation.project = @project
 

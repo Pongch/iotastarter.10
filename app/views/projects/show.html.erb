@@ -26,7 +26,7 @@
 
 <p>
   <strong>Website</strong>
-  <%= @project.url %>
+  <a href="http://<%= @project.url %>"><%= @project.url %></a>
 </p>
 
 
@@ -58,7 +58,7 @@
   <tr>
     <td><%= donation.name %></td>
     <td><%= donation.amount %></td>
-    <td><a href="http://"><%= donation.url %></a></td>
+    <td><a href="http://<%= donation.url %>"><%= donation.url %></a></td>
   <!--<p>Your Secret Tag</p>
   <%= donation.tag %>-->
 <% end %>
