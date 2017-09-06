@@ -2,7 +2,7 @@
 <%= form_with(model: project, local: true) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2><%= pluralize(project.errors.count, "error") %> Please fill in the required forms</h2>
       <ul>
       <% project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,11 +13,11 @@
   <div class="form-group">
     <div class="row">
       <div class="col-sm-4">
-        <label for="owner">Your Name</label>
+        <label for="owner">Your Name*</label>
         <%= form.text_field :owner, class:"form-control" %>
       </div>
       <div class="col-sm-4">
-        <label for="email">Your Email</label>
+        <label for="email">Your Email*</label>
         <%= form.text_field :email, class:"form-control"%>
       </div>
     </div>
@@ -44,7 +44,7 @@
     <em>(Total Amount you are raising in <strong>Million</strong> Iota)</em>
   </div>
   <div class="form-group">
-    <label for="address">Your IOTA Wallet Address</label>
+    <label for="address">Your IOTA Wallet Address*</label>
     <%= form.text_field :address, class:"form-control" %>
   </div>
   <div class="actions">

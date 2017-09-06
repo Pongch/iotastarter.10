@@ -1,5 +1,24 @@
 <div class="body container"
 ><h1>Back <%= @project.title %></h1>
 <p> Donate to Address: <%= @project_address %></p>
+<!-- popup modal-->
+<!--<div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title text-center" id="myModalLabel">Important</h4>
+          </div>
+          <div class="modal-body">
+              <p class="text-center">Please Transfer <%= @project.total %> M Iota </p>
+              <p class="text-center">To Wallet Address: <%= @project_address %></p>
+              <p class="text-center">With the Tag: __ </p>
+            </br>
+            </br>
+          </div>
+      </div>
+  </div>
+</div>-->
+
 <%= render 'form', donation: @donation %>
 </div>
