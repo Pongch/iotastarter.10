@@ -1,5 +1,5 @@
 <div class="body container"
-><h1>Back a Project</h1>
-
+><h1>Back <%= @project.title %></h1>
+<p> Donate to Address: <%= @project_address %></p>
 <%= render 'form', donation: @donation %>
 </div>

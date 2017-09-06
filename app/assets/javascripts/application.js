@@ -21,7 +21,8 @@ $(document).on('turbolinks:load',function() {
     $(".pop").click(function(){
          $('#myModal').modal('show');
     });
-    $("#donate").click(function(){
-      alert("Thanks for your Donation! Your Donation will need to be approved before it is shown on leaderboard !");
-    });
+    //$("#donate").click(function(){
+      //alert("Thanks for your Donation! Your Donation will need to be approved before it is shown on leaderboard !");
+      //$(this).off(event);
+    //});
 });

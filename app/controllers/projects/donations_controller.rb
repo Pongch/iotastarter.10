@@ -15,6 +15,7 @@ class Projects::DonationsController < ApplicationController
   # GET /donations/new
   def new
     @project = Project.friendly.find(params[:project_id])
+    @project_address = Project.friendly.find(params[:project_id]).address
     @donation = Donation.new
   end
 
