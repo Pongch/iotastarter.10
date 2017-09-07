@@ -20,6 +20,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 #bootstrap
+# gem social share
+gem 'social-share-button'
 #gem SEO Friendly url
 gem 'friendly_id'
 # See https://github.com/rails/execjs#readme for more supported runtimes

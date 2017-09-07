@@ -16,6 +16,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require social-share-button
 
 $(document).on('turbolinks:load',function() {
     $(".pop").click(function(){

@@ -29,6 +29,8 @@
   <a href="http://<%= @project.url %>"><%= @project.url %></a>
 </p>
 
+<p>Share on Social Media to show support: </p>
+<%= social_share_button_tag(@project.title, :rel=>"#{ @project.description }" ,:image=> "https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.0-9/21232104_343566339398623_1227064227148784010_n.jpg?oh=a4fe252259e513e216df721bf039d4da&oe=5A5CF1C8") %>
 
   <p class="text-center"><strong>Funding: </strong></p>
   <h3 class="text-center"><%= @donations.approved.sum(:amount) %> of <%= @project.total %><span> Million Iota</span></h3>
@@ -61,7 +63,7 @@
     <td><a href="http://<%= donation.url %>"><%= donation.url %></a></td>
   <!--<p>Your Secret Tag</p>
   <%= donation.tag %>-->
-<% end %>
+  <% end %>
 </table>
 <!--<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

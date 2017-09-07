@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all.order("total DESC")
     @donations = Donation.approved
+    @pending_donations = Donation.pending
   end
 
   # GET /projects/1
