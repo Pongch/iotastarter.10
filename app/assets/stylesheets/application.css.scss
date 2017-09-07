@@ -275,3 +275,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+/* The social share button gem */
+
+$size: 3em;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
