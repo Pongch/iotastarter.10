@@ -1,6 +1,7 @@
 
 <div class="container body">
-
+  <% title @project.title %>
+  <% meta_description @project.description.truncate(150, separator: ' ') %>
 <p>
   <h1><%= @project.title %></h1>
 </p>

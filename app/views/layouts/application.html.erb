@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IotaStarter</title>
+    <title>
+      <% if yield(:title).present? %>
+          <%= yield(:title) %>
+      <% else %>
+          IotaStarter: Crowdfunding without fee
+      <% end %>
+    </title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Crowdfunding Campaign, powered by Iota !">
-    <meta name="keywords" content="Iota, Crowdfunding">
-    <title>IotaStarter| Crowdfunding Campaign with Iota </title>
+    <% if yield(:meta_description).present? %>
+        <meta name="description" content="<%= yield(:meta_description) %>" />
+    <% else %>
+        <meta name="description" content="Crowdfunding with IOTA" />
+    <% end %>
+    <meta name="keywords" content="Crowdfunding without fee">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Aldrich|Roboto" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
