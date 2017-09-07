@@ -103,7 +103,7 @@
         <%= project.owner %>
         <br>
         <strong>Description </strong>
-        <%= project.description %>
+        <%= project.description.truncate(300) %>
         <br>
         <strong>Raised</strong>
         <%= project.donations.approved.sum(:amount) %>
