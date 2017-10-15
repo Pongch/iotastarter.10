@@ -103,19 +103,12 @@
         <strong>Description </strong>
         <%= project.description.truncate(300) %>
         <br>
-        <!--<strong>Raised</strong>
-        <%= project.donations.approved.sum(:amount) %>
-        <%= @helper_balance %>
-        <strong>Out of</strong>
-        <%= project.total %> Mi (Million Iota)-->
         <strong>Raising</strong>
         <%= project.total %> Mi (Million Iota)
         <br>
         <br>
         <%= link_to 'See project', project, class:"btn btn-default" %>
 
-        <!--<td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
   </div>
 </div>
