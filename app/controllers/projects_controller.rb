@@ -5,15 +5,58 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all.order("total DESC")
+    @project = Project
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @projects }
+    end
+
     @donations = Donation.approved
     @pending_donations = Donation.pending
+  
   end
+
 
   # GET /projects/1
   # GET /projects/1.json
   def show
     @project = Project.friendly.find(params[:id])
     @donations = @project.donations.approved.order("amount DESC")
+    #begins the IOTA WALLET GET BALANCE ()
+
+    require 'net/http'
+    require 'uri'
+    require 'json'
+
+    uri = URI.parse("http://iota.bitfinex.com:80")
+    request = Net::HTTP::Post.new(uri)
+    request.content_type = "application/json"
+    request.body = JSON.dump({
+      "command" => "getBalances",
+      "addresses" => [
+        @project.address.to_s
+      ],
+      "threshold" => 100
+    })
+
+    req_options = {
+      use_ssl: uri.scheme == "https",
+    }
+
+    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+      the_request = http.request(request)
+    end
+
+    balance_array = JSON.parse(response.body)
+    @show_balance = balance_array['balances'].join(",").to_f/1000000
+
+    #ends API Call
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @donations}
+    end
   end
 
   # GET /projects/new
@@ -66,7 +109,7 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.s
+
     def set_project
       @project = Project.friendly.find(params[:id])
     end
