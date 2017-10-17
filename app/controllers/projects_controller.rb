@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
     @donations = Donation.approved
     @pending_donations = Donation.pending
-  
+
   end
 
 
@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @donations}
+      format.json { render json: @project}
     end
   end
 
