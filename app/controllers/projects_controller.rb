@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     @project = Project.friendly.find(params[:id])
     @donations = @project.donations.approved.order("amount DESC")
     #begins the IOTA WALLET GET BALANCE ()
-=begin
+
     require 'net/http'
     require 'uri'
     require 'json'
@@ -49,7 +49,8 @@ class ProjectsController < ApplicationController
     end
 
     balance_array = JSON.parse(response.body)
-    @show_balance = balance_array['balances'].join(",").to_f/1000000
+
+    @show_balance = balance_array["balances"].to_f/1000000
 
     #ends API Call
 
@@ -57,7 +58,7 @@ class ProjectsController < ApplicationController
       format.html
       format.json { render json: @project}
     end
-=end
+
   end
 
   # GET /projects/new
