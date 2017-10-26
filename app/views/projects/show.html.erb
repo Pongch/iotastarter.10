@@ -35,14 +35,17 @@
 <%= social_share_button_tag(@project.title, :rel=>"#{ @project.description }" ,:image=> "https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.0-9/21232104_343566339398623_1227064227148784010_n.jpg?oh=a4fe252259e513e216df721bf039d4da&oe=5A5CF1C8") %>
 
   <p class="text-center"><strong>Funding: </strong></p>
-  <h3 class="text-center"><%= @show_balance %> of <%= @project.total %><span> Million Iota</span></h3>
+  <h3 class="text-center"><%= @donations.approved.sum(:amount) %> of <%= @project.total %><span> Million Iota</span></h3>
+   <% project_completion = (@donations.approved.sum(:amount) / @project.total.to_f) * 100 %>
 
 
-<div class="progress">
-  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-  aria-valuenow="<%= project_completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= project_completion %>%;">
-  </div>
-</div>
+   <div class="progress">
+       <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+       aria-valuenow="<%= project_completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= project_completion %>%;">
+        <%= project_completion %>% towards funding goal
+        <%= @project_completion  %>% towards funding goal
+       </div>
+     </div>
 
 <br>
 <%= link_to 'BACK THIS PROJECT', new_project_donation_path(@project), class:"btn btn-danger btn-lg"%>
