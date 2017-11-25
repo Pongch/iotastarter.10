@@ -12,6 +12,6 @@ module ApplicationHelper
     (@show_balance/@project.total.to_f) * 100
   end
 
-  
+
 
 end
